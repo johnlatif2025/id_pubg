@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -35,12 +36,15 @@ function saveData() {
 // تسجيل الدخول (للوحة الأدمن فقط)
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
-  if (username === 'john' && password === 'latif') {
+
+  if (username === process.env.ADMIN_USERNAME && password === process.env.ADMIN_PASSWORD) {
     req.session.admin = true;
     return res.redirect('/admin.html');
   }
+
   res.status(401).json({ success: false, message: 'بيانات الدخول غير صحيحة' });
 });
+
 
 // تسجيل الخروج
 app.get('/logout', (req, res) => {
