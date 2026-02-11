@@ -144,8 +144,8 @@
       color: #d81b60;
       font-weight: bold;
     }
-            .red-text {
-            color: red;
+        .blue-text {
+            color: blue;
             font-size: 32px;
             font-weight: bold;
             text-align: center;
@@ -158,12 +158,10 @@
   <div class="container">
     <h2>بحث عن التصنيف بالID</h2>
     
-        <div class="red-text">وقفنا لعب</div>
-
-
     <select id="idSelector" class="id-selector">
       <option value="">اختر رقم ID</option>
       <option value="51681131969">51681131969</option>
+      <option value="51455484399">51455484399</option>
     </select>
     
     <div class="search-box">
@@ -256,6 +254,7 @@
             <span class="remaining">${remainingToTop}</span>
           </div>
         </div>
+        <div class="blue-text">بدأنا لعب</div>
         <div class="time-info">
           <div class="time-label">الوقت العالمي (UTC):</div>
           <div id="currentTime">${new Date().toUTCString()}</div>
